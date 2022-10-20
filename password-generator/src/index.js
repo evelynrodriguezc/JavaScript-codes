@@ -1,3 +1,5 @@
+const paragraphPassword = document.querySelector("#password");
+
 const letters = [
     "a",
     "b",
@@ -34,6 +36,19 @@ const arrayOfArrays = [letters, numbers, symbols]
 
 let passwordLength = 10
 
+let strongPassword = []
+
 for (let i = 0; i < passwordLength; i++) {
-    const myArray = []
+    const myArray = arrayOfArrays[getRandomNumber(0, arrayOfArrays.length - 1)];
+    const randomCharacter =  myArray[getRandomNumber(0, myArray.length - 1)];
+
+    strongPassword.push(randomCharacter);    
+}
+
+strongPassword = strongPassword.join(""); //adds each password character to a string 
+paragraphPassword.innerText = `${paragraphPassword.textContent} ${strongPassword}`;
+console.log(strongPassword);
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1));
 }
