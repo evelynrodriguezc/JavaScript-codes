@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
-    <form class="form">
+    <form class="form" id="form">
         <p id="password" class="password">Your password will appear here</p>
         <div class="option">
-            <input type="checkbox" name="" id="">
-            <p>Letters</p>
+            <p>Define the total characters of your password </p>
+            <input type="range" name="length" id="" min="10" max="30">
         </div>
         <div class="option">
             <input type="checkbox" name="" id="">
@@ -25,6 +25,9 @@
         <div class="option">
             <input type="checkbox" name="" id="">
             <p>Words</p>
+        </div>
+        <div>
+            <button type="submit" id="generate-button">Generate strong password</button>
         </div>
     </form>
     <script src="./src/index.js"></script>

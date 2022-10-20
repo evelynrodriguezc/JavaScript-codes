@@ -1,4 +1,5 @@
 const paragraphPassword = document.querySelector("#password");
+const form = document.querySelector("#form");
 
 const letters = [
     "a",
@@ -32,23 +33,31 @@ const letters = [
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
 
-const arrayOfArrays = [letters, numbers, symbols]
+const arrayOfArrays = [letters, numbers, symbols];
 
-let passwordLength = 10
+let passwordLength = 10;
 
-let strongPassword = []
 
-for (let i = 0; i < passwordLength; i++) {
-    const myArray = arrayOfArrays[getRandomNumber(0, arrayOfArrays.length - 1)];
-    const randomCharacter =  myArray[getRandomNumber(0, myArray.length - 1)];
 
-    strongPassword.push(randomCharacter);    
+function generatePassword() {
+    let strongPassword = [];
+    for (let i = 0; i < passwordLength; i++) {
+        const myArray = arrayOfArrays[getRandomNumber(0, arrayOfArrays.length - 1)];
+        const randomCharacter =  myArray[getRandomNumber(0, myArray.length - 1)];
+    
+        strongPassword.push(randomCharacter);    
+        strongPassword = strongPassword.join(""); //adds each password character to a string 
+        paragraphPassword.innerText = `${paragraphPassword.textContent} ${strongPassword}`;
+        
+        console.log(strongPassword);
+    }
 }
-
-strongPassword = strongPassword.join(""); //adds each password character to a string 
-paragraphPassword.innerText = `${paragraphPassword.textContent} ${strongPassword}`;
-console.log(strongPassword);
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1));
 }
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+});
