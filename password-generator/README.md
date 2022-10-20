@@ -1,6 +1,6 @@
 ## Password Generator
 
-### Characteristics:
+### Features:
 * Able to copy the password
 * Define the total number of characters that our password can have
 * Generate passwords with only numbers
@@ -9,7 +9,7 @@
 * Generate passwords with combinations of all of the above
 * Generate passwords with words
 
-###Technologies:
+### Technologies:
 * HTML
 * CSS
 * JS
