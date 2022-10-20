@@ -13,7 +13,4 @@
 * HTML
 * CSS
 * JS
-<<<<<<< HEAD
 * AXIOS
-=======
->>>>>>> 2f94a04de6c20e47e68183e79de9a07019b0bfe7
