@@ -39,3 +39,14 @@ body {
 .option input {
     margin-right: 10px;
 }
+
+#password:disabled {
+    cursor: not-allowed;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 900;
+    width: 100%;
+    color: var(--text-color);
+}

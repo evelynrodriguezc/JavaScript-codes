@@ -9,7 +9,9 @@
 </head>
 <body>
     <form class="form" id="form">
-        <p id="password" class="password">Your password will appear here</p>
+        <p  class="password">Your password will appear here</p>
+        <input type="text" disabled id="password">
+        <button type="button" id="button-copy">Copy password</button> 
         <div class="option">
             <p>Define the total characters of your password </p>
             <input type="range" name="length" id="" min="10" max="30">
@@ -34,6 +36,7 @@
             <button type="submit" id="generate-button">Generate strong password</button>
         </div>
     </form>
+    
     <script src="./src/index.js"></script>
 </body>
 </html>

@@ -1,5 +1,8 @@
 const paragraphPassword = document.querySelector("#password");
 const form = document.querySelector("#form");
+const buttonCopy = document.querySelector("#button-copy");
+
+const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5"
 
 const letters = [
     "a",
@@ -32,7 +35,7 @@ const letters = [
   
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
-
+let words = [];
 
 function generatePassword(passwordLength, checkbuttons) {
     const arrayOfArrays = [];
@@ -60,12 +63,35 @@ function generatePassword(passwordLength, checkbuttons) {
     }
      
     strongPassword = strongPassword.join(""); //adds each password character to a string 
-    paragraphPassword.innerText = `Your password will appear here: ${strongPassword}`;
-    console.log(strongPassword);
+    paragraphPassword.value = strongPassword;
 }
+
+function fetchData(API) {
+    fetch(API)
+    .then((response) => response.json())
+    .then((data) => {
+        words = data.quotes.map(quote => quote.text);
+        console.log(words);
+    });
+}
+
+fetchData(API);
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1));
+}
+
+function copyToClipboard(target) {
+
+    const element = document.querySelector(target);
+    const value = element.value;
+
+    if(value.length == 0){
+        alert("You have to generate a password first");
+    } else {
+        window.navigator.clipboard.writeText(value);
+        alert("You copied the password");
+    }
 }
 
 form.addEventListener("submit", (event) => {
@@ -82,3 +108,10 @@ form.addEventListener("submit", (event) => {
 
     generatePassword(passwordLength, checks);
 });
+
+buttonCopy.addEventListener("click", () => {
+    copyToClipboard("#password");
+});
+
+
+
