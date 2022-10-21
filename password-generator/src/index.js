@@ -1,8 +1,10 @@
 const paragraphPassword = document.querySelector("#password");
 const form = document.querySelector("#form");
 const buttonCopy = document.querySelector("#button-copy");
+const inputLenght = document.querySelector("#input-length");
+const passwordLengthParagraph = document.querySelector("#password-length");
 
-const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5"
+const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
 
 const letters = [
     "a",
@@ -52,7 +54,10 @@ function generatePassword(passwordLength, checkbuttons) {
         arrayOfArrays.push(symbols);
     }
 
-    console.log(arrayOfArrays);
+    if(checkbuttons.words){
+        arrayOfArrays = [];
+        arrayOfArrays.push(words);
+    }
     
     let strongPassword = [];
     for (let i = 0; i < passwordLength; i++) {
@@ -61,8 +66,12 @@ function generatePassword(passwordLength, checkbuttons) {
 
         strongPassword.push(randomCharacter);   
     }
-     
-    strongPassword = strongPassword.join(""); //adds each password character to a string 
+    
+    if(checkbuttons.words){
+        strongPassword = strongPassword.join("-"); //adds each password character to a string 
+    } else {
+        strongPassword = strongPassword.join(""); 
+    }
     paragraphPassword.value = strongPassword;
 }
 
@@ -70,8 +79,8 @@ function fetchData(API) {
     fetch(API)
     .then((response) => response.json())
     .then((data) => {
-        words = data.quotes.map(quote => quote.text);
-        console.log(words);
+        words = data.quotes.map((quote) => quote.text);
+        words = words.join("").split(" ").sort();
     });
 }
 
@@ -96,7 +105,7 @@ function copyToClipboard(target) {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formElement = event.target
+    const formElement = event.target;
     const passwordLength = formElement.length.value;
     const checks = {
         letters: formElement.letters.checked,
@@ -105,12 +114,20 @@ form.addEventListener("submit", (event) => {
         words: formElement.words.checked,
     }
 
+    if(checks.words){
+        formElement.letters.checked = false;
+    }
 
     generatePassword(passwordLength, checks);
+    buttonCopy.disabled = false;
 });
 
 buttonCopy.addEventListener("click", () => {
     copyToClipboard("#password");
+});
+
+inputLenght.addEventListener("input", (e) => {
+    passwordLengthParagraph.innerText = e.target.value;
 });
 
 
