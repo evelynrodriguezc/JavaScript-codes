@@ -1,6 +1,8 @@
 const board = document.querySelector("#board");
+const modal = document.querySelector("#modal");
 const listOfSlots = [];
-let enemyMovements = [];
+const rows = [];
+let listOfMovements = [];
 let currentSlot;
 
 let buttons = document.querySelectorAll(".options--button");
@@ -22,19 +24,26 @@ board.classList.add("disabled");
 function printValue(event) {
   const target = event.target;
   currentSlot = target;
+
   if (player1.active) {
     target.innerText = player1.value;
     player1.active = false;
     player2.active = true;
+    clearProcess()
     myEnemy()
   } else {
     target.innerText = player2.value;
     player2.active = false;
     player1.active = true;
+    clearProcess()
   }
+}
 
+function clearProcess() {
   currentSlot.classList.add("disabled");
-  currentSlot.removeEventListener("click", printValue); // to not reescribe
+  currentSlot.removeEventListener("click", printValue);
+  listOfMovements = listOfMovements.filter(elem => elem.id !== currentSlot.id)
+  checkWinner()
 }
 
 function createSlots() {
