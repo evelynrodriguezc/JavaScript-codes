@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Form and Counter Website</title>
+</head>
+<body>
+    <form id="myForm">
+        <h1>Interactivity with JS</h1>
+        <h2>Data form</h2>
+        <label for="name"> Name: </label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br><br>
+        <label for="email"> Email: </label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <br><br>
+        <button type="button" onclick="showAlert()">Submit</button>
+    </form>
+
+    <h2>Show or Hide Text</h2>
+    <button id="toggleButton" onclick="toggleText()">Show Text</button>
+    <p id="hiddenText" style="display: none;"> This one is the text you can hide or show</p>
+
+    <h2>Interactive counter</h2>
+    <button onclick="incrementCounter()">Increment</button>
+    <p>Clicked <span id="counter">0</span> Times</p>
+    <script src="./js/script.js"></script>
+</body>
+</html>
