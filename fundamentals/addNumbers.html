@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Nums Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <label for="number1"> Enter the first number: </label>
+    <input type="number" id="number1" placeholder="Number 1">
+    <br><br>
+    <label for="number2"> Enter the second number: </label>
+    <input type="number" id="number2" placeholder="Number 2">
+    <br><br>
+    <button onclick="numsOperations()">Operations</button>
+    <p>The result of the addition is: <span id="sum"></span></p>
+    <p>The result of the subtraction is: <span id="subtract"></span></p>
+    <p>The result of the multiplication is: <span id="multiply"></span></p>
+    <p>The result of the division is: <span id="divide"></span></p>
+
+    <script>
+        function numsOperations(){
+            let num1 = document.getElementById(number1).value;
+            let num2 = document.getElementById(number2).value;
+            let sum = Number(num1)+Number(num2)
+            document.getElementById("sum").innerHTML=suma
+            let subtract = Number(num1)-Number(num2)
+            document.getElementById("subtract").innerHTML=subtract
+            let multiply = Number(num1)*Number(num2)
+            document.getElementById("multiply").innerHTML=multiply
+            let divide = Number(num1)/Number(num2)
+            document.getElementById("divide").innerHTML=divide
+        }
+    </script>
+
+
+</body>
+</html>
