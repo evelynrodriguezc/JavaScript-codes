@@ -31,4 +31,9 @@ function deleteTask(button){
     task.remove()
 }
 
+function arrayExample(){
+    let numbers = [1, 2, 3, 4, 5, 6, 7]
+    let result = document.getElementById("resultArray")
+}
+
 
