@@ -1,3 +1,4 @@
+let number = [];
 
 function addTask(){
     let taskInput = document.getElementById("new-task");
@@ -27,13 +28,51 @@ function addTask(){
 
 
 function deleteTask(button){
-    let task = button.parentElement
-    task.remove()
-}
-
-function arrayExample(){
-    let numbers = [1, 2, 3, 4, 5, 6, 7]
-    let result = document.getElementById("resultArray")
+    let task = button.parentElement;
+    task.remove();
 }
 
 
+function loadArray(){
+    let arrayInput = document.getElementById("arrayInput").value.trim();
+    number = arrayInput.split(",").map(Number).filter(n => !isNaN(n));
+    document.getElementById("arrayInput").value="";
+    updateResult();
+}
+
+function updateResult(){
+    let result = document.getElementById("resultArray");
+    result.innerHTML= `[${number.join(", ")}]`;
+}
+
+function pushElement(){
+    let value = document.getElementById("inputValue").value.trim();
+    if(!isNaN(value) && value!==""){
+        number.push(Number(value));
+        document.getElementById("inputValue").value="";
+        updateResult();
+    }else{
+        alert("Enter a valid value");
+    }
+}
+
+function popElement(){
+    number.pop();
+    updateResult();
+}
+
+function shiftElement(){
+    number.shift();
+    updateResult();
+}
+
+function unshiftElement(){
+    let value = document.getElementById("inputValue").value.trim();
+    if(!isNaN(value) && value !== ""){
+        number.unshift(Number(value))
+        document.getElementById("inputValue").value="";
+        updateResult()
+    }else{
+        alert("Enter a valid value")
+    }
+}

@@ -26,9 +26,22 @@
                 <li><strong>Delete last element: </strong><code>array.pop()</code></li>
                 <li><strong>Delete first element: </strong><code>array.shift()</code></li>
                 <li><strong>Add in the first position: </strong><code>array.unshift(value)</code></li>
-            </ul>
-            <button class="btn" onclick="exampleArray()">Watch Arrays Example</button>
-            <p id="resultArray"></pi>
+            </ul><br><br>
+            <h1>JS Arrays Manipulation</h1>
+            <p>Enter an array separated by commas and perform basic operations</p>
+            <input type="text" id="arrayInput" placeholder="Example: 3, 2, 8">
+            <button class="btn" onclick="loadArray()">Load Array</button>
+
+            <div id="arrayContainer">
+                <h3>Current Array: <span id="resultArray">[]</span></h3>
+            </div><br>
+
+            <input type="text" id="inputValue" placeholder="Enter the value you want to add: "><br><br>
+            <button class="btn" onclick="pushElement()">Push (Add it to the end of the array)</button><br><br>
+            <button class="btn" onclick="popElement()">Pop (Delete the value at the end of the array)</button><br><br>
+            <button class="btn" onclick="shiftElement()">Shift (Delete the value from the beginning of the array)</button><br><br>
+            <button class="btn" onclick="unshiftElement()">Unshift (Add it to the beginning of the array)</button><br><br>
+
         </section>
     </main>
     <footer>
