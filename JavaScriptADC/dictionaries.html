@@ -26,8 +26,15 @@
                 <li><strong>Modify value: </strong><code>dictionary["key"]=newValue</code></li>
                 <li><strong>Delete value: </strong><code>delete dictionary["key"]</code></li>
             </ul>
-            <button class="btn" onclick="exampleDictionary()">Watch Dictionary Example</button>
+            <p>Captures keys and values for the dictionary</p>
+            <input type="text" id="keyInput" placeholder="Add a key">
+            <input type="text" id="valueInputDic" placeholder="Add a value">
+            <button class="btn" onclick="addDictionary()">Add to the Dictionary</button>
+            <br>
+            <h3>Actual Dictionary: </h3>
             <p id="resultDictionary"></p>
+            <button class="btn" onclick="modifyDictionary()">Modify Dictionary</button>
+            <button class="btn" onclick="deleteKey()">Delete Key</button>
 
             <p>Sets are... Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <h2>Basic Operations with Sets</h2>
@@ -36,8 +43,15 @@
                 <li><strong>Delete value: </strong><code>set.delete(value)</code></li>
                 <li><strong>Check value: </strong><code>set.has(value)</code></li>
             </ul>
-            <button class="btn" onclick="exampleSet()">Watch Sets Example</button>
+            <br><br>
+            <h3>Operations with Sets: </h3>
+            <input type="text" id="valueInputSet" placeholder="Enter the value for the set">
+            <button class="btn" onclick="addSet()">Add to the Set</button>
+
+            <h3>Actual Set</h3>
             <p id="resultSet"></p>
+            <button class="btn" onclick="modifySet()">Modify Set</button>
+            <button class="btn" onclick="deleteSetValue()">Delete from the set</button>
         </section>
     </main>
     <footer>
