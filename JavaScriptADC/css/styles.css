@@ -93,3 +93,54 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Media Queries */
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+        width: 90%; /* Make the main section smaller for mobile */
+        box-shadow: none; /* Remove shadow for simplicity on small screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the nav items vertically */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add space between nav items */
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    button.btn {
+        width: 100%; /* Make buttons full-width on mobile */
+        margin-bottom: 10px;
+    }
+}
+
+/* Tablet screens */
+@media (max-width: 900px) {
+    main {
+        padding: 20px;
+        width: 80%; /* Slightly reduce main width for tablets */
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    button.btn {
+        width: auto;
+    }
+}
+
