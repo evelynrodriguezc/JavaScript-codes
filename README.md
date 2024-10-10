@@ -3,8 +3,9 @@
 ## Basic Interactive ChatBot
 <img width="1019" alt="image" src="https://github.com/user-attachments/assets/e9ec54bc-cc53-4088-ab74-4c6dbbf5a972">
 
-Technologies: HTML, CSS & JS
-
+Technologies: HTML, CSS & JavaScript
+You can visit the live version of the website here: [ChatBot Website]([https://evelynrodriguezc.github.io/JavaScript-codes/horses-website/](https://evelynrodriguezc.github.io/JavaScript-codes/chatbot/)
+___
 
 ## Horses website with Bootstrap template
 ![image](https://github.com/user-attachments/assets/81193a4b-c379-4303-b6ff-0cbda5f6ca67)
