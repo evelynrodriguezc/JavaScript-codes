@@ -28,13 +28,13 @@ body {
 }
 h1 {
     font-size: 40px;
-    
 }
 
 h2 {
     font-size: 30px;
     text-align: left;
     color: #0f0e0e;
+    display: block;
 }
 
 /* Estilo para el logo */
@@ -110,7 +110,7 @@ header .logo {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 50px 30px;
+    padding: 40px 16px 104px 75px;
     height: 100vh;
     box-sizing: border-box;
     width: 600px;
