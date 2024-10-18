@@ -10,3 +10,6 @@ function showNextItem() {
 
 // Cambiar imagen cada 3 segundos
 setInterval(showNextItem, 3000);
+
+
+

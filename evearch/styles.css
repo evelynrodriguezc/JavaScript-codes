@@ -5,6 +5,8 @@
 
 * {
     box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -14,7 +16,6 @@ html {
     height: 100%;
 }
 
-/* styles.css */
 body {
     margin: 0;
     padding: 0;
@@ -37,16 +38,25 @@ h2 {
     display: block;
 }
 
-/* Estilo para el logo */
 header {
-    position: absolute;
+    position:absolute;
     top: 20px;
     left: 20px;
     z-index: 10;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1100px;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 header .logo {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
+    width: 150px;
     height: auto;
 }
 
@@ -74,8 +84,8 @@ header .logo {
     height: 100%;
     opacity: 0;
     transition: opacity 1s;
-    margin: 0; /* Asegúrate de que no haya margen */
-    padding: 0; /* Asegúrate de que no haya padding */
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-item.active {
@@ -116,21 +126,19 @@ header .logo {
     width: 600px;
 }
 
-
-/* Actualizar el estilo del menú de navegación */
 .nav-menu {
     display: flex;
-    gap: 10px; /* Espacio entre los elementos */
+    gap: 10px;
     justify-content: flex-start;
 }
 
 .nav-menu a {
     padding: .625rem 1.5rem .5rem;
-    background-color: #100F0F0D; /* Fondo semi-transparente */
+    background-color: #100F0F0D;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 3px; /* Esquinas ligeramente redondeadas */
+    border-radius: 3px;
     transition: background-color 0.3s;
     font-size: 18px;
     align-items: center;
@@ -139,42 +147,109 @@ header .logo {
 }
 
 .nav-menu a:hover {
-    background-color: rgba(16, 15, 15, 0.1); /* Cambio en el fondo al pasar el ratón */
+    background-color: rgba(16, 15, 15, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: #cd4c3a;
+    background-color: rgba(16, 15, 15, 0.1)
+}
+
+main {
+    padding-top: 100px;
 }
 
 .info {
     text-align: center;
 }
 
-/* Estilo para los botones */
+.info button{
+    margin-top: 20px;
+}
+
 button {
-    background-color: transparent; /* Fondo transparente */
-    color: #000; /* Color del texto */
-    border: 1px solid #000; /* Borde delgado */
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    text-transform: uppercase;
     font-weight: bold;
 }
 
-/* Estilo para el botón "Ver Trabajo" */
-button.view {
-    background-color: transparent; /* Fondo transparente */
-    color: #fff; /* Color del texto blanco */
-    border: 1px solid #fff; /* Borde blanco */
-    padding: 30px 20px 10px 10;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, backdrop-filter 0.3s;
-    text-transform: uppercase; /* Convertir texto a mayúsculas */
-    font-weight: bold;
-    margin-top: 60px;
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
 }
 
-/* Efecto hover para el botón */
-button.view:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco semi-transparente */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+.image-container {
+    margin-right: 20px;
+    width: 60%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.description {
+    width: 35%;
+    padding: 20px;
+}
+
+.description h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tags span {
+    background-color: #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description {
+        width: 100%;
+        padding: 0;
+    }
+
+    .image-container {
+        width: 100%;
+    }
 }
