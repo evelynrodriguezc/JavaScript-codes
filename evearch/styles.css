@@ -193,6 +193,20 @@ button {
     font-weight: bold;
 }
 
+button.view {
+    color: white;
+    border: 1px solid white;
+}
+
+button.view:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+button.contact {
+    display: flex;
+    align-items: start !important;
+}
+
 .project {
     display: flex;
     align-items: center;
